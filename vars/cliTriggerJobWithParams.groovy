@@ -1,4 +1,4 @@
-def call(String fileName, String controllerUrl = '', String jobPath = '', String waitForResult = 'true'){
+def call(String fileName = '', String controllerUrl = '', String jobPath = '', String waitForResult = 'true'){
     //Get CLI jar
     sh 'curl -O $JENKINS_URL/jnlpJars/jenkins-cli.jar'
 
