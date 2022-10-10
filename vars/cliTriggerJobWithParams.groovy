@@ -8,7 +8,7 @@ def call(Map config){
     def PARAMETER_STRING = ''
     for (key in config.keySet()){
         if (key.startsWith("PARAM")){
-            PARAMETER_STRING = $PARAMETER_STRING + ' -p ' + key + '=' + config.get(key)
+            PARAMETER_STRING = "$PARAMETER_STRING" + ' -p ' + key + '=' + config.get(key)
         }
     }
 
