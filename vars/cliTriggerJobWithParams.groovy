@@ -1,3 +1,6 @@
+// syntax to call from a pipeline:
+// cliTriggerJobWithParams PARAM_SDLC_ENV: 'SDLC', PARAM_ENV_ALIAS: 'ts', fileName: 'demo.tfvars', controllerUrl: 'JENKINS_URL', jobPath: 'folderName/jobName'
+
 def call(Map config){
 
     //Get CLI jar
