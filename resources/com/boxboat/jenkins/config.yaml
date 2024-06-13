@@ -1,3 +1,5 @@
+git:
+  credential: git
 repo:
   common:
     defaultBranch: master
