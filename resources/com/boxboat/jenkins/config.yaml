@@ -1,5 +1,5 @@
 git:
-  credential: git
+  credential: 580536b9-8af8-448b-93a8-401b77e3682d
 repo:
   common:
     defaultBranch: master
