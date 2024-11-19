@@ -8,12 +8,11 @@ def call(Map config){
             then
                 echo "JFrog CLI not found. Proceeding with installation.";
                 # get install script from Artifactory...
-                # curl -u $ARTIFACTORY_USR:$ARTIFACTORY_PSW https://artifactory/path/to/install/script/install-cli.sh -o install-cli.sh
+                # curl -u $ARTIFACTORY_USR:$ARTIFACTORY_PSW -sfL https://artifactory/path/to/install/script/install-cli.sh -o install-cli.sh
 
                 # get from JFrog site directly...
                 curl -sfL https://install-cli.jfrog.io -o install-cli.sh
 
-                #install a specific version of the CLI
                 sh install-cli.sh 2.71.3
             else
                 echo "JFrog CLI already installed."
@@ -23,7 +22,13 @@ def call(Map config){
                 then
                     echo "Newer approved version available."
                     #install the latest version of the CLI
+
+                    # get install script from Artifactory...
+                    # curl -u $ARTIFACTORY_USR:$ARTIFACTORY_PSW -sfL https://artifactory/path/to/install/script/install-cli.sh -o install-cli.sh
+
+                    # get from JFrog site directly...
                     curl -sfL https://install-cli.jfrog.io -o install-cli.sh
+
                     sh install-cli.sh 2.71.5
                 else
                     echo "This is the latest version."
@@ -33,7 +38,7 @@ def call(Map config){
         } else { //for windows agents
             // powershell
             // Get-Command jf
-            
+
             // bat
             // where jf
         }
