@@ -11,7 +11,7 @@ def call(Map config){
                 # curl -u $ARTIFACTORY_USR:$ARTIFACTORY_PSW https://artifactory/path/to/install/script/install-cli.sh -o install-cli.sh
 
                 # get from JFrog site directly...
-                curl --silent -f -L https://install-cli.jfrog.io -o install-cli.sh
+                curl -sfL https://install-cli.jfrog.io -o install-cli.sh
 
                 #install a specific version of the CLI
                 sh install-cli.sh 2.71.3
