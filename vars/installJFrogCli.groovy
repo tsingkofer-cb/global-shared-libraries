@@ -11,7 +11,7 @@ def call(Map config){
                 # curl -u $ARTIFACTORY_USR:$ARTIFACTORY_PSW https://artifactory/path/to/install/script/install-cli.sh -o install-cli.sh
 
                 # get from JFrog site directly...
-                curl -sfL https://install-cli.jfrog.io -o install-cli.sh
+                curl -s -f -L https://install-cli.jfrog.io -o install-cli.sh
 
                 #install a specific version of the CLI
                 sh install-cli.sh 2.71.3
@@ -19,11 +19,12 @@ def call(Map config){
                 echo "JFrog CLI already installed."
                 jf --version
                 INSTALLED_VERSION=$(jf --version | cut -c11-)
-                if [ $(ver ${INSTALLED_VERSION}) -lt $(ver 2.71.3) ]
+                if [ $(ver ${INSTALLED_VERSION}) -lt $(ver 2.71.5) ]
                 then
                     echo "Newer approved version available."
                     #install the latest version of the CLI
-                    sh install-cli.sh 2.71.3
+                    curl -sfL https://install-cli.jfrog.io -o install-cli.sh
+                    sh install-cli.sh 2.71.5
                 else
                     echo "This is the latest version."
                 fi
