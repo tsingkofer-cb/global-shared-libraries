@@ -32,7 +32,10 @@ def call(Map config){
             '''
         } else { //for windows agents
             // powershell
+            // Get-Command jf
+            
             // bat
+            // where jf
         }
     // }
 }
